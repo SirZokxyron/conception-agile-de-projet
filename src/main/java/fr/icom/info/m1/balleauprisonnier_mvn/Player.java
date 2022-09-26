@@ -18,6 +18,7 @@ public class Player
 	  final double y; 	  // position verticale du joueur
 	  double angle = 90; // rotation du joueur, devrait toujour être en 0 et 180
 	  double step;    // pas d'un joueur
+	  double speedCoef;
 	  String playerColor;
 	  
 	  // On une image globale du joueur 
@@ -70,7 +71,7 @@ public class Player
         // step = randomGenerator.nextFloat();
 
         // Pour commencer les joueurs ont une vitesse / un pas fixe
-        step = 1;
+        step = Math.random()*3+1;
 	    
 	  }
 
