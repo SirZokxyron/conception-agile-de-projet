@@ -66,10 +66,10 @@ public class Field extends Canvas {
 		equipe2.get(0).display();
     	
     	for(int i = 1; i < 3 ; i++) {
-    		equipe1.add(i, new Player(gc, colorMap[i+2], (w/4)+(150*i), h-50, "bottom"));
+    		equipe1.add(i, new Computer(gc, colorMap[i+2], (w/4)+(150*i), h-50, "bottom"));
     		equipe1.get(i).display();
     		
-    		equipe2.add(i, new Player(gc, colorMap[i+2], (w/4)+(150*i), 20, "top"));
+    		equipe2.add(i, new Computer(gc, colorMap[i+2], (w/4)+(150*i), 20, "top"));
     		equipe2.get(i).display();
         }
     	
