@@ -122,13 +122,13 @@ public class Player
 	   */
 	  void turnLeft() 
 	  {
-	    if (angle > 0 && angle < 180) 
+	    if (angle <= 90) 
 	    {
 	    	angle += 1;
 	    }
-	    else {
+	    /*else {
 	    	angle += 1;
-	    }
+	    }*/
 
 	  }
 
@@ -138,17 +138,18 @@ public class Player
 	   */
 	  void turnRight() 
 	  {
-	    if (angle > 0 && angle < 180) 
+	    if (angle >= -90) 
 	    {
 	    	angle -=1;
 	    }
-	    else {
+	    /*else {
 	    	angle -= 1;
-	    }
+	    }*/
 	  }
 
 
 	  void shoot(){
+		  Projectile projectile = new Projectile(this);
 	  	sprite.playShoot();
 	  }
 	  
