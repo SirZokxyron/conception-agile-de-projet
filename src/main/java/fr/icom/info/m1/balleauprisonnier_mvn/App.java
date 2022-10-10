@@ -10,7 +10,8 @@ import javafx.stage.Stage;
  * Classe principale de l'application 
  * s'appuie sur javafx pour le rendu
  */
-public class App extends Application 
+public class 
+ extends Application 
 {
 	
 	/**
