@@ -1,5 +1,7 @@
 package fr.icom.info.m1.balleauprisonnier_mvn.models;
 
+import javafx.scene.image.Image;
+
 public class PlayerModel
 {
 	private double h_pos;
@@ -13,7 +15,7 @@ public class PlayerModel
 		super();
 		this.h_pos = h_pos;
 		this.team = team;
-		this.v_pos = (team == PlayerTeam.TOP) ? 25 : 575;
+		this.v_pos = (team == PlayerTeam.TOP) ? 25 : 700;
 		this.angle = (team == PlayerTeam.TOP) ? 90 : -90;
 		this.step = Math.random()*3+1;
 	}
@@ -68,4 +70,7 @@ public class PlayerModel
 		return team;
 	}
 	
+	public String getImagePath() {
+		return (this.getTeam() == PlayerTeam.TOP) ? "assets/PlayerRed.png" : "assets/PlayerBlue.png";
+	}
 }

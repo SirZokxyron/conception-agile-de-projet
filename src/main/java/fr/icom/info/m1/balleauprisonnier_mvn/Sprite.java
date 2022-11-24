@@ -1,5 +1,6 @@
 package fr.icom.info.m1.balleauprisonnier_mvn;
 
+import fr.icom.info.m1.balleauprisonnier_mvn.models.PlayerTeam;
 import javafx.animation.*;
 import javafx.beans.property.*;
 import javafx.geometry.*;
@@ -18,7 +19,7 @@ public class Sprite extends ImageView {
     private Timeline timeline;
     public boolean isRunning;
 
-    public Sprite(Image animationImage, int numCells, int numRows, Duration frameTime, String side) {
+    public Sprite(Image animationImage, int numCells, int numRows, Duration frameTime, PlayerTeam side) {
         this.numCells = numCells;
 
         double cellWidth  = 64;//animationImage.getWidth() / numCells; //64x64
@@ -28,7 +29,7 @@ public class Sprite extends ImageView {
         numCellsWalk = 9;
 
         int lineNumber = 8;
-        if(side == "top"){
+        if(side == PlayerTeam.TOP){
             lineNumber += 2;
         }
 
