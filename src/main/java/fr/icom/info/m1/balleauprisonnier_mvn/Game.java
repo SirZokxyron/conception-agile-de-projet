@@ -7,6 +7,7 @@ import java.util.Map;
 import fr.icom.info.m1.balleauprisonnier_mvn.controllers.PlayerController;
 import fr.icom.info.m1.balleauprisonnier_mvn.models.Actions;
 import fr.icom.info.m1.balleauprisonnier_mvn.models.BallModel;
+import fr.icom.info.m1.balleauprisonnier_mvn.models.ComputerModel;
 import fr.icom.info.m1.balleauprisonnier_mvn.models.FieldModel;
 import fr.icom.info.m1.balleauprisonnier_mvn.models.PlayerModel;
 import fr.icom.info.m1.balleauprisonnier_mvn.models.PlayerTeam;
@@ -45,9 +46,17 @@ public class Game extends Canvas {
 		
 		PlayerModel playerTOP;
 		PlayerModel playerBOT;
-		for (int i = 0; i < 3; i++) {
-			playerTOP = new PlayerModel((i+1)*800/4, PlayerTeam.TOP);
-			playerBOT = new PlayerModel((i+1)*800/4, PlayerTeam.BOT);
+		playerTOP = new PlayerModel(800/4, PlayerTeam.TOP);
+		playerBOT = new PlayerModel(800/4, PlayerTeam.BOT);
+		playersTOP.add(playerTOP);
+		playersBOT.add(playerBOT);
+		playerViews.add(new PlayerView(playerTOP));
+		playerViews.add(new PlayerView(playerBOT));
+		arrowViews.add(new ArrowView(gc, playerTOP));
+		arrowViews.add(new ArrowView(gc, playerBOT));
+		for (int i = 1; i < 3; i++) {
+			playerTOP = new ComputerModel((i+1)*800/4, PlayerTeam.TOP);
+			playerBOT = new ComputerModel((i+1)*800/4, PlayerTeam.BOT);
 			playersTOP.add(playerTOP);
 			playersBOT.add(playerBOT);
 			playerViews.add(new PlayerView(playerTOP));
