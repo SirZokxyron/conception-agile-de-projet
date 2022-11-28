@@ -8,14 +8,12 @@ public class BallModel {
 	private boolean moving = false;
 	
 	private static BallModel instance;
-	
-	
+
 	private BallModel() {
 		super();
 	}
 	
-	
-	public BallModel getInstance() {
+	public static BallModel getInstance() {
 		if(BallModel.instance == null)
 			BallModel.instance = new BallModel();
 		return BallModel.instance;
@@ -34,11 +32,17 @@ public class BallModel {
 		this.v_pos += this.direction[1] * this.speed;
 	}
 
+	public void setH_pos(double h_pos) {
+		this.h_pos = h_pos;
+	}
+
+	public void setV_pos(double v_pos) {
+		this.v_pos = v_pos;
+	}
 
 	public double getH_pos() {
 		return h_pos;
 	}
-
 
 	public double getV_pos() {
 		return v_pos;

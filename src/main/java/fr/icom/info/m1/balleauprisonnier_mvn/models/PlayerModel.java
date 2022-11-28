@@ -1,7 +1,5 @@
 package fr.icom.info.m1.balleauprisonnier_mvn.models;
 
-import javafx.scene.image.Image;
-
 public class PlayerModel
 {
 	private double h_pos;
@@ -29,28 +27,27 @@ public class PlayerModel
 	
 	public void turn(int direction) {
 		int delta = (direction > 0) ? 1 : -1;
-		if(this.team == PlayerTeam.TOP) {
+		if (this.team == PlayerTeam.TOP) {
 			if (this.angle + delta < 0 ) this.angle = 0;
 			else if (this.angle + delta > 180) this.angle = 180;
 			else this.angle += delta;
-		}else {
+		} else {
 			if (this.angle + delta > 0 ) this.angle = 0;
 			else if (this.angle + delta < -180) this.angle = -180;
 			else this.angle += delta;
 		}
 		
-		
-		
-		int sign = (int) Math.signum(this.angle + delta);
-		if (Math.abs(this.angle + delta) < 180) this.angle = 180 * sign;
-		else if (this.angle + delta < 0) this.angle = 0;
-		else this.angle += delta;
+		// int sign = (int) Math.signum(this.angle + delta);
+		// if (Math.abs(this.angle + delta) < 180) this.angle = 180 * sign;
+		// else if (this.angle + delta < 0) this.angle = 0;
+		// else this.angle += delta;
 	}
 	
 	public void shoot() {
 		if (this.ball != null) {
-			double[] direction = {Math.cos(this.angle), Math.sin(this.angle)};
+			double[] direction = { Math.cos(this.angle), -Math.sin(this.angle) };
 			this.ball.launchFrom(this.h_pos, this.v_pos, 0.2, direction);
+			this.ball = null;
 		}
 	}
 
@@ -72,5 +69,17 @@ public class PlayerModel
 	
 	public String getImagePath() {
 		return (this.getTeam() == PlayerTeam.TOP) ? "assets/PlayerRed.png" : "assets/PlayerBlue.png";
+	}
+
+	public boolean hasBall() {
+		return (this.ball != null);
+	}
+
+	public BallModel getBall() {
+		return this.ball;
+	}
+
+	public void setBall(BallModel ball) {
+		this.ball = ball;
 	}
 }

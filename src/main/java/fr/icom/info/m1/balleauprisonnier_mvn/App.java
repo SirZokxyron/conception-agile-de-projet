@@ -10,7 +10,6 @@ public class App extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		// TODO Auto-generated method stub
 		primaryStage.setTitle("Dodgeball");
 		
 		Group root = new Group();
@@ -19,14 +18,15 @@ public class App extends Application {
 		Game game = new Game();
 		root.getChildren().add(game);
 		
-		for (PlayerView playerView : game.getPlayerViews()) {
+		for (PlayerView playerView : game.getPlayerViews())
 			root.getChildren().add(playerView);
-		}
+		
+		root.getChildren().add(game.getBallView());
+
 		
 		primaryStage.setScene(scene);
 		
 		primaryStage.show();
-		
 	}
 
 	public static void main(String[] args) {
