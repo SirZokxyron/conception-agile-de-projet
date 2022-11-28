@@ -17,7 +17,7 @@ public class App extends Application {
 		Scene scene = new Scene(root);
 		
 		Game game = new Game();
-		root.getChildren().add(game.getFieldView());
+		root.getChildren().add(game);
 		
 		for (PlayerView playerView : game.getPlayerViews()) {
 			root.getChildren().add(playerView);

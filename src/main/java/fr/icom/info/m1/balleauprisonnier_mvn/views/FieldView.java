@@ -1,21 +1,23 @@
 package fr.icom.info.m1.balleauprisonnier_mvn.views;
 
-import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+
 import fr.icom.info.m1.balleauprisonnier_mvn.models.FieldModel;
 
-public class FieldView extends Canvas {
+public class FieldView {
 	FieldModel field;
 	
-	public FieldView(FieldModel field) {
-		super(field.getWidth(), field.getHeight());
+	public FieldView(GraphicsContext gc, FieldModel field) {
 		this.field = field;
 		
-		GraphicsContext gc = this.getGraphicsContext2D();
-		
-		 gc.setFill( Color.LIGHTGRAY);
-         gc.fillRect(0, 0, field.getWidth(), field.getHeight());
+		gc.setFill( Color.LIGHTGRAY);
+	    gc.fillRect(0, 0, field.getWidth(), field.getHeight());
+	    
 	}
+
+//	public ArrayList<String> getInput() {
+//		return input;
+//	}
 
 }

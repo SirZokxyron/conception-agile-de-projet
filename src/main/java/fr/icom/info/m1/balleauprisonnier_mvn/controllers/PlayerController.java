@@ -16,7 +16,7 @@ public class PlayerController
 		this.keybinds = keybinds;
 	}
 	
-	void processInput(String input) {
+	public void processInput(String input) {
 		switch(this.keybinds.get(input)) {
 		case MOVE_LEFT:
 			this.player.hMove(-1);
