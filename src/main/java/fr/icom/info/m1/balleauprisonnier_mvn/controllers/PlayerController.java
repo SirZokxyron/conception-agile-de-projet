@@ -7,8 +7,8 @@ import fr.icom.info.m1.balleauprisonnier_mvn.models.PlayerModel;
 
 public class PlayerController
 {
-	PlayerModel player;
-	Map<String, Actions> keybinds;
+	PlayerModel player;				// Le joueur dont c'est le controlleur
+	Map<String, Actions> keybinds;	// Contient un dictionnaire avec des paires ("touche de clavier", "action")
 	
 	public PlayerController(PlayerModel player, Map<String, Actions> keybinds) {
 		super();
@@ -16,6 +16,7 @@ public class PlayerController
 		this.keybinds = keybinds;
 	}
 	
+	// Fonction qui prend un input et execute l'action appropriée
 	public void processInput(String input) {
 		if (!this.keybinds.containsKey(input)) {
 			return;
@@ -40,5 +41,4 @@ public class PlayerController
 			break;
 		}
 	}
-	
 }

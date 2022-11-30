@@ -1,8 +1,8 @@
 package fr.icom.info.m1.balleauprisonnier_mvn.models;
 
 public class FieldModel {
-	int height;
-	int width;
+	int height; // Hauteur du terrain
+	int width; // Largeur du terrain
 	
 	public FieldModel(int height, int width) {
 		this.height = height;

@@ -2,12 +2,12 @@ package fr.icom.info.m1.balleauprisonnier_mvn.models;
 
 public class PlayerModel
 {
-	private double h_pos;
-	private final double v_pos;
-	private double angle = 0;
-	private double step;
-	PlayerTeam team;
-	BallModel ball = null;
+	private double h_pos;			// Position horizontale du joueur
+	private final double v_pos;		// Position verticale du joueur
+	private double angle = 0;	// Angle de la flèche associée au joueur
+	private double step;		// Vitesse du joueur
+	PlayerTeam team;			// Équipe du joueur
+	BallModel ball = null;		// Ball possédée par le joueur
 	
 	public PlayerModel(double h_pos, PlayerTeam team) {
 		super();
